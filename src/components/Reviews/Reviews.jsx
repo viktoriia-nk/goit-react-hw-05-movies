@@ -15,7 +15,7 @@ const Reviews =() =>{
         .catch(err => console.log(err));
     },[movieId])
 
-    console.log(reviews);
+    // console.log(reviews);
 
     return (
         <>

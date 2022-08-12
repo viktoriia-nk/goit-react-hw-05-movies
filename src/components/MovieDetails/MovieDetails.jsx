@@ -28,13 +28,15 @@ const MovieDetails = () => {
        <h2 className={s.title}>{movies.title}</h2>
         <p className={s.overview}>{movies.overview}</p>
         <p className={s.relise}>Realise Date: <span className={s.span}>{movies.release_date}</span></p>
-        <p className={s.genresTitle}>Genres:   
+        <div className={s.thumb}>
+        <p className={s.genresTitle}>Genres:</p>   
         <ul className={s.genres}>
             {movies.genres && movies.genres.map(genre => (
                 <li key={genre.id} className={s.genre}> {genre.name}</li>
                     ))}
         </ul>
-        </p>
+        </div>
+        
         
        </div>
        </div>

@@ -32,7 +32,7 @@ const Movies = () => {
         .catch(err => console.log(err));
     },[q])
 
-console.log(movies);
+// console.log(movies);
 
     return (
        <>

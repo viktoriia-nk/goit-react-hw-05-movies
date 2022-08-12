@@ -14,7 +14,7 @@ const Cast = () => {
         .catch(err => console.log(err));
     },[movieId])
 
-console.log(cast);
+// console.log(cast);
     return (
         <div className={s.container}>
         <ul className={s.gallery}>

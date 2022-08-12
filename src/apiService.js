@@ -29,7 +29,7 @@ export const getOneFilm = async (movieId) => {
 export const getCastActors = async (movieId) => {
   try{
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data
   }
   catch (error) {
@@ -40,7 +40,7 @@ export const getCastActors = async (movieId) => {
 export const getReviews = async (movieId) => {
   try{
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data
   }
   catch (error) {

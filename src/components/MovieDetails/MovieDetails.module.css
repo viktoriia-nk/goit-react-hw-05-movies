@@ -74,3 +74,8 @@
 .link:hover{
     color: #eaccd7;
 }
+
+.thumb{
+    display: flex;
+    flex-direction: row;
+}

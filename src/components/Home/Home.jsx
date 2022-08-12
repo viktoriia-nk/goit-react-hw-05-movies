@@ -12,7 +12,7 @@ const Home = () => {
           .then(response => setMovies(response.results))
           .catch(err => console.log(err));
       }, []);
-      console.log(movies);
+    //   console.log(movies);
 
 
     return(
