@@ -1,0 +1,30 @@
+.img{
+    width: 150px;
+    height: 225px;
+    margin-bottom: 5px;
+}
+
+.container{
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    gap: 30px;
+}
+
+.item{
+    width: 150px;
+}
+
+.item:not(:last-child){
+    margin-right: 30px;
+}
+
+.name{
+    margin-bottom: 5px;
+}

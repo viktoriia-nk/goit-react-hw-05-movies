@@ -1,0 +1,32 @@
+.form{
+    text-align: center;
+}
+
+.input{
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    border-style: none;
+    border: 2px solid #383540;
+}
+
+.input:hover{
+    border-color: #b797a2;
+}
+
+.link{
+    color: #a58a94;
+}
+
+.link:hover{
+    color: #eaccd7;
+}
+
+.li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.gallery{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}

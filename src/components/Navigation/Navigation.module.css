@@ -1,0 +1,26 @@
+.header{
+    height: 60px;
+    border-bottom: 4px solid #383540;
+    margin-bottom: 20px;
+    background-color: #b797a2;
+}
+
+.nav{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.link{
+    font-size: 30px;
+    margin-top: 10px;
+    color: #383540;
+}
+
+.link:not(:last-child){
+    margin-right: 100px;
+}
+
+.link:hover{
+    color: #7d687a;
+}

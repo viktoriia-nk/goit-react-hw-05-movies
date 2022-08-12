@@ -1,0 +1,76 @@
+.container{
+    display: flex;
+    padding-left: 30px;
+    max-width: 1200px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.title{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.img{
+    width: 300px;
+}
+
+.overview {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.relise{
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.span{
+    font-weight: normal;
+}
+
+.genresTitle{
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+}
+
+.genres{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.genre:not(:last-child){
+    margin-right: 5px;
+}
+
+.genre:not(:last-child)::after{
+   content: ",";
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    margin-top: -40px;
+    margin-left: 360px;
+}
+
+.link{
+    font-size: 30px;
+    margin-top: 10px;
+    color: #383540;
+}
+
+.link:not(:last-child){
+    margin-right: 30px;
+}
+
+.link:hover{
+    color: #eaccd7;
+}

@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #eaccd7;
+    margin-left: 10px;
+}
+
+.link{
+    color: #a58a94;
+}
+
+.link:hover{
+    color: #eaccd7;
+}
+
+.li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.gallery{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
