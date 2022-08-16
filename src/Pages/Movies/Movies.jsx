@@ -1,8 +1,10 @@
 
-import {useState} from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import {searchFilm} from '../../apiService';
 import s from './Movies.module.css';
+
+import RenderSearch from './RenderSearch';
 
 const Movies = () => {
 
@@ -15,6 +17,8 @@ const Movies = () => {
     const handleQueryChange = (e) =>{
         setQ(e.currentTarget.value.toLowerCase())
     }
+
+    const [searchParams] = useSearchParams();
 
 
     const handleSubmit = (e) => {
@@ -31,8 +35,18 @@ const Movies = () => {
         navigate(`?q=${q}`, {
             state: location.state,
           });
-    }
 
+        }
+        
+    useEffect(()=>{
+        const querry = searchParams.get('q')
+        if(!querry) return;
+        searchFilm(querry)
+        .then(response=>setMovies(response.results))
+        .catch(err => console.log(err));
+        
+
+    }, [])
 
 
     return (
@@ -48,18 +62,19 @@ const Movies = () => {
                 onChange = {handleQueryChange}
                 className={s.input}
                 />
-            <button type='submit'>Search</button>    
+            <button className={s.btn} type='submit'>Search</button>    
         </form>
-        {q !== "" && 
+        {movies.length !== 0 && <RenderSearch movies={movies}/>}
+        {/* {q !== "" && 
         <ul className={s.gallery}>
         {movies.map(movie=>(
             <li
             key ={movie.id} className={s.li}>
-                <Link className={s.link} to={`/movies/${movie.id}`}><h2>{movie.title}</h2></Link>
+                <Link className={s.link} to={`/movies/${movie.id}`} state={location}><h2>{movie.title}</h2></Link>
             </li>
         ))}
             
-    </ul>}
+    </ul>} */}
         </>
 
         

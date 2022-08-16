@@ -1,5 +1,7 @@
 .form{
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .input{
@@ -29,4 +31,16 @@
 .gallery{
     margin-left: 30px;
     margin-bottom: 30px;
+}
+
+.btn{
+    font-size: 30px;
+    text-align: center;
+    color: #383540;
+    background-color: transparent;
+    border-style: none;
+}
+
+.btn:hover{
+    color: #eaccd7;
 }
