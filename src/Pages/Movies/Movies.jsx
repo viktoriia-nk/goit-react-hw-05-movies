@@ -38,8 +38,8 @@ const Movies = () => {
 
         }
         
-    useEffect(()=>{
         const querry = searchParams.get('q')
+    useEffect(()=>{
         if(!querry) return;
         searchFilm(querry)
         .then(response=>setMovies(response.results))
