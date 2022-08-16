@@ -2,6 +2,7 @@
     display: flex;
     padding-left: 30px;
     max-width: 1200px;
+    margin-top: 10px;
 }
 
 .wrapper{
@@ -78,4 +79,15 @@
 .thumb{
     display: flex;
     flex-direction: row;
+}
+
+.back{
+    font-size: 30px;
+    margin-left: 30px;
+    text-align: center;
+    color: #383540;
+}
+
+.back:hover{
+    color: #eaccd7;
 }

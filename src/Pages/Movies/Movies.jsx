@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import {searchFilm} from '../../apiService';
 import s from './Movies.module.css';
 
@@ -8,6 +8,9 @@ const Movies = () => {
 
     const [q, setQ] = useState('')
     const [movies, setMovies] = useState([])
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleQueryChange = (e) =>{
         setQ(e.currentTarget.value.toLowerCase())
@@ -18,21 +21,19 @@ const Movies = () => {
         e.preventDefault()
         if (q.trim() === ""){
             alert("Введите поисковой запрос")
+            setQ('')
         }
         
-        setQ('')
-    }
-
-    useEffect(()=> {
-        if(q===''){
-            return
-        }
         searchFilm(q)
         .then(response=>setMovies(response.results))
         .catch(err => console.log(err));
-    },[q])
 
-// console.log(movies);
+        navigate(`?q=${q}`, {
+            state: location.state,
+          });
+    }
+
+
 
     return (
        <>
@@ -47,6 +48,7 @@ const Movies = () => {
                 onChange = {handleQueryChange}
                 className={s.input}
                 />
+            <button type='submit'>Search</button>    
         </form>
         {q !== "" && 
         <ul className={s.gallery}>

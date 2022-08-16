@@ -8,6 +8,7 @@ const Cast = () => {
 
     const {movieId} = useParams()
 
+
     useEffect(()=>{
         getCastActors(movieId)
         .then(response=> setCast(response.cast))
@@ -16,7 +17,8 @@ const Cast = () => {
 
 // console.log(cast);
     return (
-        <div className={s.container}>
+        
+    <div className={s.container}>
         <ul className={s.gallery}>
             {cast.map(actor=>(<li key={actor.id} className={s.item}>
                 <img className={s.img} src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />
@@ -25,7 +27,7 @@ const Cast = () => {
             </li>))}
         </ul>
       
-        </div>
+    </div>
     )
 }
 

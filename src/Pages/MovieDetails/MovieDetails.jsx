@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import {useParams, NavLink, Outlet} from 'react-router-dom';
+import { Suspense, useEffect, useState } from 'react';
+import {useParams, NavLink, Outlet, useLocation, Link} from 'react-router-dom';
 import {getOneFilm} from '../../apiService';
 import s from './MovieDetails.module.css';
 
@@ -7,6 +7,8 @@ import s from './MovieDetails.module.css';
 
 const MovieDetails = () => {
     const [movies, setMovies] = useState({})
+
+    const location = useLocation();
     
 
     const {movieId} = useParams()
@@ -22,6 +24,9 @@ const MovieDetails = () => {
        
     return (
        <>
+        <Link to={location.state ?? '/'} className={s.back}>
+            Go back
+          </Link>
         <div className={s.container}>
         <img className={s.img} src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`} alt={movies.title} />
        <div className={s.wrapper}>
@@ -45,7 +50,10 @@ const MovieDetails = () => {
         <NavLink className={s.link} to="reviews" >Reviews</NavLink>
         
         </div>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
+        
         
         </>
     )
