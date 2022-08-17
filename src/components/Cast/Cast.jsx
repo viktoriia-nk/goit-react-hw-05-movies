@@ -1,6 +1,6 @@
 import {getCastActors} from '../../apiService';
 import { useEffect, useState } from 'react';
-import {useLocation, useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import s from './Cast.module.css';
 
 const Cast = () => {
@@ -8,7 +8,7 @@ const Cast = () => {
 
     const {movieId} = useParams()
 
-    const location = useLocation()
+    
 
 
     useEffect(()=>{
