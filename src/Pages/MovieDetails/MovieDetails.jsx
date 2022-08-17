@@ -20,11 +20,11 @@ const MovieDetails = () => {
         .catch(err => console.log(err));
     }, [movieId])
 
-   
+//    console.log(location);
        
     return (
        <>
-        <Link to={location.state ?? '/'} className={s.back}>
+        <Link to={location.state ?? '/'} className={s.back} state={location}>
             Go back
           </Link>
         <div className={s.container}>
@@ -46,8 +46,8 @@ const MovieDetails = () => {
        </div>
        </div>
        <div className={s.nav}>
-        <NavLink className={s.link} to="cast" >Cast</NavLink>
-        <NavLink className={s.link} to="reviews" >Reviews</NavLink>
+        <NavLink className={s.link} state={location.state} to="cast" >Cast</NavLink>
+        <NavLink className={s.link} state={location.state} to="reviews" >Reviews</NavLink>
         
         </div>
         <Suspense>

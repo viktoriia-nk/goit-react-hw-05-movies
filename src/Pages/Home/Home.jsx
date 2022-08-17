@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {getTrending} from '../../apiService';
 import s from './Home.module.css';
 
 const Home = () => {
     const [movies, setMovies] = useState([])
+
+    const location = useLocation()
 
 
     useEffect(() => {
@@ -13,7 +15,7 @@ const Home = () => {
           .catch(err => console.log(err));
       }, []);
     //   console.log(movies);
-
+// console.log(location);
 
     return(
         <div className={s.container}>
@@ -23,7 +25,7 @@ const Home = () => {
             <li
             key ={movie.id}
             className={s.li}>
-                <Link className={s.link} to={`/movies/${movie.id}`}><h2>{movie.title}</h2></Link>
+                <Link className={s.link} to={`/movies/${movie.id}`} state={location}><h2>{movie.title}</h2></Link>
             </li>
         ))}
             

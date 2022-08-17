@@ -1,12 +1,14 @@
 import {getCastActors} from '../../apiService';
 import { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom';
+import {useLocation, useParams} from 'react-router-dom';
 import s from './Cast.module.css';
 
 const Cast = () => {
     const [cast, setCast] = useState([])
 
     const {movieId} = useParams()
+
+    const location = useLocation()
 
 
     useEffect(()=>{
@@ -15,7 +17,7 @@ const Cast = () => {
         .catch(err => console.log(err));
     },[movieId])
 
-// console.log(cast);
+// console.log(location);
     return (
         
     <div className={s.container}>

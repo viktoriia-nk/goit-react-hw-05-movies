@@ -44,14 +44,14 @@ const Movies = () => {
         searchFilm(querry)
         .then(response=>setMovies(response.results))
         .catch(err => console.log(err));
-        
 
     }, [searchParams])
 
+// console.log(location);
 
     return (
        <>
-        <form onSubmit={handleSubmit} className={s.form}>
+        <form onSubmit={handleSubmit} className={s.form} >
             <input
                 type="text"
                 autoComplete="off"
